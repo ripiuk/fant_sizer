@@ -42,8 +42,8 @@ def get_sorted_file_size(the_path, number, min_first):
         print(f'{i+1:{number_len}} | {result[i][1]:{size_len}} | '
               f'{result[i][1] * 0.000001:{mb_len+2}.1f} | {result[i][0]}')
 
-if __name__ == '__main__':
 
+def main():
     parser = argparse.ArgumentParser(description='Displays sorted information about size, '
                                                  'path to files in subdirectories.')
     parser.add_argument('-p', dest='path', metavar='PATH', help='the path to parent dir', action='store',
@@ -54,3 +54,6 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     get_sorted_file_size(the_path=args.path, number=args.number, min_first=args.min)
+
+if __name__ == '__main__':
+    main()
