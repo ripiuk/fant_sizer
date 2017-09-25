@@ -28,14 +28,12 @@ Number of files: 6657
 5 |  38513408 |  38.5 | /home/sany/PycharmProjects/BuildingMachine/.libs/libopenblasp-r0-39a31c03.2.18.so
 ~~~~
 * Besides that, you can start it with arguments:
-
+~~~
     -h, --help  show this help message and exit
-
     -p PATH     the path to parent dir
-
     -n NUMBER   how much files will be shown
-
     -m, --min   sort by min size
+~~~
 
 ### Sample output
 ~~~
