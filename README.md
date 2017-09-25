@@ -17,7 +17,7 @@ sudo python3.6 setup.py install
 
 * After installation, you can run this package directly in command line. Launching it without arguments starts it in interactive mode:
 ~~~
-$ fant_sizer.py
+$ fant_sizer
 ~~~
 
 ### Sample output:
@@ -41,7 +41,7 @@ Number of files: 6657
 
 ### Sample output
 ~~~
-$ fant_sizer.py -p /home/sany/PycharmProjects/some_dir -n 40 -m
+$ fant_sizer -p /home/sany/PycharmProjects/some_dir -n 40 -m
 
 Path: /home/sany/PycharmProjects/some_dir
 Number of files: 45
