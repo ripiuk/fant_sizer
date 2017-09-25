@@ -8,12 +8,16 @@ Displays sorted information about size (in bytes and megabytes), path to files i
 sudo apt-get update
 sudo apt-get install python3.6
 ~~~~
+* Install fant-sizer
+~~~
+sudo python3.6 setup.py install
+~~~
 
 ## Usage
 
 * After installation, you can run this package directly in command line. Launching it without arguments starts it in interactive mode:
 ~~~
-$ python3.6 fant_sizer.py
+$ fant_sizer.py
 ~~~
 
 ### Sample output:
@@ -37,7 +41,7 @@ Number of files: 6657
 
 ### Sample output
 ~~~
-$ python3.6 fant_sizer.py -p /home/sany/PycharmProjects/some_dir -n 40 -m
+$ fant_sizer.py -p /home/sany/PycharmProjects/some_dir -n 40 -m
 
 Path: /home/sany/PycharmProjects/some_dir
 Number of files: 45
