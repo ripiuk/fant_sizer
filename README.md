@@ -29,10 +29,10 @@ Number of files: 6657
 ~~~~
 * Besides that, you can start it with arguments:
 
-  -h, --help  show this help message and exit
-  -p PATH     the path to parent dir
-  -n NUMBER   how much files will be shown
-  -m, --min   sort by min size
+    -h, --help  show this help message and exit
+    -p PATH     the path to parent dir
+    -n NUMBER   how much files will be shown
+    -m, --min   sort by min size
 
 ### Sample output
 ~~~
