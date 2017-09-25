@@ -1,7 +1,9 @@
-#!/usr/bin/python3.6
+#!/usr/bin python3.6
 
 import os
 import argparse
+
+__author__ = 'Oleksandr Rypiuk'
 
 
 def get_sorted_file_size(the_path, number, min_first):
@@ -42,12 +44,13 @@ def get_sorted_file_size(the_path, number, min_first):
 
 if __name__ == '__main__':
 
-    parser = argparse.ArgumentParser(description='Finds recursively files in directory with max or min size')
+    parser = argparse.ArgumentParser(description='Displays sorted information about size, '
+                                                 'path to files in subdirectories.')
     parser.add_argument('-p', dest='path', metavar='PATH', help='the path to parent dir', action='store',
                         default=os.getcwd())
     parser.add_argument('-n', type=int, dest='number', metavar='NUMBER', help='how much files will be shown',
                         action='store', default=5)
-    parser.add_argument('-m', '--min', help='sorted by min size', action='store_true')
+    parser.add_argument('-m', '--min', help='sort by min size', action='store_true')
 
     args = parser.parse_args()
     get_sorted_file_size(the_path=args.path, number=args.number, min_first=args.min)
