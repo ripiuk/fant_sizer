@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/ripiuk/fant_sizer.svg?branch=master
+    :target: https://travis-ci.org/ripiuk/fant_sizer
+
 ============
 Usage:
 ============
