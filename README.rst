@@ -54,5 +54,5 @@ Download
 ============
 ::
 
-  pip3 install fant_sizer
+  python3.6 -m pip install fant_sizer
 

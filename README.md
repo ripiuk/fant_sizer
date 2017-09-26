@@ -2,6 +2,9 @@
 Python script, that can help recursively find files in the directory and sort them by size.
 Displays sorted information about size (in bytes and megabytes), path to files in subdirectories.
 
+## Latest release:
+https://pypi.python.org/pypi/fant-sizer
+
 ## Getting Started
 * Install python3.6:
 ~~~~
@@ -10,7 +13,7 @@ sudo apt-get install python3.6
 ~~~~
 * Install fant-sizer
 ~~~
-sudo python3.6 setup.py install
+python3.6 -m pip install fant_sizer
 ~~~
 
 ## Usage
