@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/ripiuk/fant_sizer.svg?branch=master)](https://travis-ci.org/ripiuk/fant_sizer)
 ## fant-sizer
 Python script, that can help recursively find files in the directory and sort them by size.
 Displays sorted information about size (in bytes and megabytes), path to files in subdirectories.
