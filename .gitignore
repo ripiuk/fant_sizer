@@ -2,3 +2,5 @@
 build/
 dist/
 fant_sizer.egg-info/
+.cache/
+*/__pycache__/
