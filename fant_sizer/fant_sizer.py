@@ -53,7 +53,7 @@ def get_result(path_to_dir: str, min_size_first: bool):
             try:
                 size = os.stat(path).st_size
             except FileNotFoundError:
-                print('No such file or directory:', path)
+                print('There is no such file or directory:', path)
             else:
                 result[path] = size
 
