@@ -3,7 +3,7 @@ from os.path import join, dirname
 
 setup(
         name="fant_sizer",
-        version="0.5",
+        version="0.6",
         author="Rypiuk Oleksandr",
         author_email="ripiuk96@gmail.com",
         description="fant_sizer command-line file-information",

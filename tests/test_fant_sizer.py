@@ -12,7 +12,8 @@ def test_results_with_not_existing_files(monkeypatch):
             ('/foo/bar', (), ('spam', 'eggs')),
         ]
         monkeypatch.setattr('fant_sizer.fant_sizer', os)
-        assert fant_sizer.get_result('/some/path', False) == []
+        assert fant_sizer.get_sorted_files_by_size(path_to_root_dir='/some/path',
+                                                   min_size_first=False) == []
 
 
 def test_results_with_existing_files():
@@ -25,9 +26,9 @@ def test_results_with_existing_files():
             open(dir_name + '/test_file2.txt', 'w+') as test_file2:
         test_file1.write('Just some text')
 
-    assert fant_sizer.get_result(path_to_dir=dir_name, min_size_first=False) == \
+    assert fant_sizer.get_sorted_files_by_size(path_to_root_dir=dir_name, min_size_first=False) == \
            [('the_dir_for_test/test_file1.txt', 14), ('the_dir_for_test/test_file2.txt', 0)]
-    assert fant_sizer.get_result(path_to_dir=dir_name, min_size_first=True) == \
+    assert fant_sizer.get_sorted_files_by_size(path_to_root_dir=dir_name, min_size_first=True) == \
            [('the_dir_for_test/test_file2.txt', 0), ('the_dir_for_test/test_file1.txt', 14)]
 
     shutil.rmtree(dir_name)

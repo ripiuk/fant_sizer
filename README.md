@@ -1,16 +1,17 @@
 [![Build Status](https://travis-ci.org/ripiuk/fant_sizer.svg?branch=master)](https://travis-ci.org/ripiuk/fant_sizer)
 ## fant-sizer
 Python script, that can help recursively find files in the directory and sort them by size.
-Displays sorted information about size (in bytes and megabytes), path to files in subdirectories.
+Displays sorted information about size (in bytes and megabytes) and path to files inside subdirectories.
 
 ## Latest release:
 https://pypi.python.org/pypi/fant-sizer
 
 ## Getting Started
-* Install python3.6:
+* Install python3.6 on Ubuntu 16.04:
 ~~~~
+sudo add-apt-repository -y ppa:fkrull/deadsnakes
 sudo apt-get update
-sudo apt-get install python3.6
+sudo apt-get install -y python3.6 python3.6-dev python3.6-venv cython
 ~~~~
 * Install fant-sizer
 ~~~
@@ -45,7 +46,7 @@ Number of files: 6657
 
 ### Sample output
 ~~~
-$ fant_sizer -p /home/sany/PycharmProjects/some_dir -n 40 -m
+$ fant_sizer -p /home/sany/PycharmProjects/some_dir -n 13 -m
 
 Path: /home/sany/PycharmProjects/some_dir
 Number of files: 45
@@ -63,4 +64,19 @@ Number of files: 45
 11 |  208 | 0.0 | /home/sany/PycharmProjects/some_dir/.idea/misc.xml
 12 |  240 | 0.0 | /home/sany/PycharmProjects/some_dir/.git/info/exclude
 13 |  280 | 0.0 | /home/sany/PycharmProjects/some_dir/.idea/modules.xml
+~~~
+
+## Simple example of usage inside code
+
+~~~python
+from fant_sizer import fant_sizer
+
+result = fant_sizer.get_sorted_files_by_size(path_to_root_dir='/home/', debug_mode=False)
+print('\n'.join(f'{path} - {size} bytes' for path, size in result))
+
+# or you can use get_the_(smallest/biggest)_file functions
+path_of_the_biggest_file, size_of_the_biggest_file = fant_sizer.get_the_biggest_file('/home')
+path_of_the_smallest_file, _ = fant_sizer.get_the_smallest_file('/home')
+print(f'The biggest file located in {path_of_the_biggest_file} - {size_of_the_biggest_file} bytes. \n'
+      f'The smallest file located in {path_of_the_smallest_file}')
 ~~~
