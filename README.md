@@ -1,4 +1,10 @@
 [![Build Status](https://travis-ci.org/ripiuk/fant_sizer.svg?branch=master)](https://travis-ci.org/ripiuk/fant_sizer)
+[![PyPI](https://img.shields.io/pypi/v/fant-sizer.svg)](https://pypi.python.org/pypi/fant-sizer)
+[![PyPI](https://img.shields.io/pypi/l/fant-sizer.svg)](https://github.com/ripiuk/fant_sizer/blob/master/LICENSE)
+[![PyPI](https://img.shields.io/pypi/wheel/fant-sizer.svg)](https://pypi.python.org/pypi/fant-sizer)
+[![PyPI](https://img.shields.io/pypi/pyversions/fant-sizer.svg)](https://pypi.python.org/pypi/fant-sizer)
+[![PyPI](https://img.shields.io/pypi/implementation/fant-sizer.svg)](https://pypi.python.org/pypi/fant-sizer)
+[![PyPI](https://img.shields.io/pypi/status/fant-sizer.svg)](https://pypi.python.org/pypi/fant-sizer)
 ## fant-sizer
 Python script, that can help recursively find files in the directory and sort them by size.
 Displays sorted information about size (in bytes and megabytes) and path to files inside subdirectories.
@@ -12,10 +18,14 @@ https://pypi.python.org/pypi/fant-sizer
 sudo add-apt-repository -y ppa:fkrull/deadsnakes
 sudo apt-get update
 sudo apt-get install -y python3.6 python3.6-dev python3.6-venv cython
+# or
+make install_python
 ~~~~
 * Install fant-sizer
 ~~~
 python3.6 -m pip install fant_sizer
+# or
+make pypi_install_fant
 ~~~
 
 ## Usage
@@ -42,6 +52,12 @@ Number of files: 6657
     -p PATH     the path to parent dir
     -n NUMBER   how much files will be shown
     -m, --min   sort by min size
+    --biggest   get information about the biggest file
+    --smallest  get information about the smallest file
+    --average   get the sum of the sizes divided by how many files are in the directory
+    --median    get the middle value of an ordered list of sizes
+    --range     get the difference between the min and max file sizes
+    --mode      get file sizes repeated most often
 ~~~
 
 ### Sample output
@@ -71,12 +87,22 @@ Number of files: 45
 ~~~python
 from fant_sizer import fant_sizer
 
-result = fant_sizer.get_sorted_files_by_size(path_to_root_dir='/home/', debug_mode=False)
+dir_name = 'some_dir'
+
+result = fant_sizer.get_sorted_files_by_size(path_to_root_dir=dir_name, debug_mode=False)
 print('\n'.join(f'{path} - {size} bytes' for path, size in result))
 
-# or you can use get_the_(smallest/biggest)_file functions
-path_of_the_biggest_file, size_of_the_biggest_file = fant_sizer.get_the_biggest_file('/home')
-path_of_the_smallest_file, _ = fant_sizer.get_the_smallest_file('/home')
-print(f'The biggest file located in {path_of_the_biggest_file} - {size_of_the_biggest_file} bytes. \n'
+# Getting smallest/biggest file
+path_of_the_biggest_file, size_of_the_biggest_file = fant_sizer.get_the_biggest_file(dir_name)
+path_of_the_smallest_file, _ = fant_sizer.get_the_smallest_file(dir_name)
+print(f' {path_of_the_biggest_file} - {size_of_the_biggest_file} bytes. \n'
       f'The smallest file located in {path_of_the_smallest_file}')
+
+# Getting average/median/range/mode of the files
+average = fant_sizer.get_the_average_size_of_the_files(dir_name)
+median = fant_sizer.get_median_of_the_files(dir_name)
+the_range = fant_sizer.get_range_of_the_files(dir_name)
+mode = fant_sizer.get_mode_of_the_files(dir_name)
+print(f'Average: {average} bytes.\nMedian: {median} bytes.\n'
+      f'Range: {the_range} bytes.\nMode: {mode} bytes.')     
 ~~~

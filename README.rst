@@ -1,5 +1,17 @@
 .. image:: https://travis-ci.org/ripiuk/fant_sizer.svg?branch=master
     :target: https://travis-ci.org/ripiuk/fant_sizer
+.. image:: https://img.shields.io/pypi/v/fant-sizer.svg
+    :target: https://pypi.python.org/pypi/fant-sizer
+.. image:: https://img.shields.io/pypi/l/fant-sizer.svg
+    :target: https://github.com/ripiuk/fant_sizer/blob/master/LICENSE
+.. image:: https://img.shields.io/pypi/wheel/fant-sizer.svg
+    :target: https://pypi.python.org/pypi/fant-sizer
+.. image:: https://img.shields.io/pypi/pyversions/fant-sizer.svg
+    :target: https://pypi.python.org/pypi/fant-sizer
+.. image:: https://img.shields.io/pypi/implementation/fant-sizer.svg
+    :target: https://pypi.python.org/pypi/fant-sizer
+.. image:: https://img.shields.io/pypi/status/fant-sizer.svg
+    :target: https://pypi.python.org/pypi/fant-sizer
 
 ============
 Usage:
@@ -27,6 +39,13 @@ Sample output:
     -p PATH     the path to parent dir
     -n NUMBER   how much files will be shown
     -m, --min   sort by min size
+    --biggest   get information about the biggest file
+    --smallest  get information about the smallest file
+    --average   get the sum of the sizes divided by how many files are in the directory
+    --median    get the middle value of an ordered list of sizes
+    --range     get the difference between the min and max file sizes
+    --mode      get file sizes repeated most often
+
 
 =============
 Sample output
